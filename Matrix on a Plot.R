@@ -1,0 +1,5 @@
+library(gplots) #after install.packages("gplots")
+m <- matrix(sample(9), 3)
+matplot(m, type='l')
+par(fig = c(0.5, 1,  0, 0.5), new = T)
+textplot(m, show.rownames = F, show.colnames = F, cex = 0.9)

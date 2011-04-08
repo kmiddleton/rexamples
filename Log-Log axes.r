@@ -1,0 +1,5 @@
+plot(1:100,1:100, log="xy", axes=F)
+axis(1, at=(seq(0,100,10)))
+axis(2, at=(seq(0,100,10)))
+abline(v=seq(0,100,10), lty=3)
+abline(h=seq(0,100,10), lty=3)

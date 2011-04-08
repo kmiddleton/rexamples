@@ -1,0 +1,3 @@
+library(tcltk)
+tclvalue(tkchooseDirectory())
+

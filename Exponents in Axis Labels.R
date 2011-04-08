@@ -1,0 +1,5 @@
+vec=c(1,10,100,1000,10000,100000,1000000,10000000)
+plot(vec,vec,log="xy", axes=F)
+axis(1, at=10^c(0,2,4,6), labels=expression(1, 10^2, 10^4, 10^6))
+axis(2, at=10^c(0,2,4,6), labels=expression(1, 10^2, 10^4, 10^6))
+box()
