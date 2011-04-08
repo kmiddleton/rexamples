@@ -1,0 +1,20 @@
+y<-c(1960, 1965, 1970, 1975)
+z<-c(1, 2, 3, 4)
+plot(y, z, type="l", col = 2)
+legend("topleft", "legend text", pch = 1, xjust = 0.5)
+
+y<-c(1960, 1965, 1970, 1975)
+z<-c(1, 2, 3, 4)
+plot(y, z, type="l", col = 2)
+legend("topleft", "legend text", lty = 1, xjust = 0.5)
+
+y<-c(1960, 1965, 1970, 1975)
+z<-c(1, 2, 3, 4)
+plot(y, z, type="l", col = 2)
+legend("topleft", c("legend1", "legend2"), lty = c(1, 2), xjust = 0.5)
+
+x <- seq(-pi, pi, len=65)
+par(mar=c(par("mar")[1] + 2, par("mar")[-1]))
+plot(x, sin(x), type="l", col=2)
+par(xpd=TRUE)
+legend("bottom", "legend text", pch=1, inset=-0.3)

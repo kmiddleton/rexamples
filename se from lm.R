@@ -1,0 +1,1 @@
+sqrt(diag(vcov(x.lm)))
