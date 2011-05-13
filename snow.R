@@ -20,7 +20,7 @@ myfun <- function() {
             order="relative", replications = 500)
 }
 
-clusterCall(cl, myfun)
+xx <- clusterCall(cl, myfun)
 Sys.time() - tm
 stopCluster(cl)
 
