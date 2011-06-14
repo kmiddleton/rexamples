@@ -1,13 +1,13 @@
 library(lme4)
 library(memisc)
 
-### create three models
+## create three models
 fm1 <- lmer(Reaction ~ 1 + (Days|Subject), sleepstudy)
 fm1.1 <- lmer(Reaction ~ Days + (Days|Subject), sleepstudy)
 fm1.2 <- lmer(Reaction ~ as.factor(Days) + (Days|Subject), sleepstudy)
 
-### note: need to run the code below fro setCoefTemplate and
-### getSummary.lmer first
+## note: need to run the code below for setCoefTemplate and
+## getSummary.lmer first
 
 mtable("Model 1"=fm1, "Model 2"=fm1.1, "Model 3"=fm1.2,
 	coef.style = "est.ci", # using "homegrown" est.ci, specified above
@@ -30,7 +30,7 @@ getSummary.lmer <- function (obj, alpha = 0.05, ...){
 	upper <- qnorm(p = 1 - alpha/2, mean = coef[, 1], sd = coef[, 2])
 	if (ncol(smry@coefs) == 3) {
 		p <- (1 - pnorm(smry@coefs[,3]))*2 # NOTE: no p-values for lmer() due to
-										   # unclear dfs; calculate p-values based on z
+				                   # unclear dfs; calculate p-values based on z
 		coef <- cbind(coef, p, lower, upper)
 	} else {
 		coef <- cbind(coef, lower, upper) # glmer will have 4 columns with p-values
