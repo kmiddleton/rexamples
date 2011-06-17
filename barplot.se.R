@@ -2,6 +2,7 @@
 ##'
 ##' Barplot with error bars, when the error bars (e.g., standard
 ##' error) have already been calculated.
+##' 
 ##' @title barplot.se
 ##' @param ys Vector of heights for bars
 ##' @param upper Vector of upper limit
