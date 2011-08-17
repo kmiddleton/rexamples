@@ -52,11 +52,15 @@ fit2 <- lm(weight ~ diet + height, data=temp)
 summary(fit2)
 Anova(fit2, type = "III")
 
-# 3. Slopes for each diet group
+# 3. With interaction (slopes for each group)
 fit3 <- lm(weight ~ diet * height, data=temp)
 summary(fit3)
 Anova(fit3, type = "III")
 abline(fit3$coefficients[1], fit3$coefficients[4], col = "red")
 abline(fit3$coefficients[1]+fit3$coefficients[2], fit3$coefficients[4]+fit3$coefficients[5], col = "green")
 abline(fit3$coefficients[1]+fit3$coefficients[3], fit3$coefficients[4]+fit3$coefficients[6], col = "blue")
+
+library(ggplot2)
+p <- ggplot(temp, aes(x = height, y = weight, color = diet))
+p + geom_point() + stat_smooth(method = "lm", se = FALSE)
 
