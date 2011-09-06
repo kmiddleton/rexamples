@@ -13,3 +13,12 @@ x <- runif(500000);
 benchmark(John(), DWin(), zero_range(),
           columns=c("test", "replications", "elapsed", "relative"),
           order="relative", replications = 10000)
+
+# Compiler doesn't help with vectorized code
+library(compiler)
+cJohn <- cmpfun(John)
+cDWin <- cmpfun(DWin)
+czero_range <- cmpfun(zero_range)
+benchmark(cJohn(), cDWin(), czero_range(),
+          columns=c("test", "replications", "elapsed", "relative"),
+          order="relative", replications = 10000)
