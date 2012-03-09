@@ -1,5 +1,6 @@
 ### create survival/cumulative incidence plot
-library(survival)
+require(survival)
+require(ggplot2)
 
 # define custom function to create a survival data.frame
 createSurvivalFrame <- function(f.survfit){
