@@ -11,9 +11,8 @@
 ##' @param xlabs Labels for bars
 ##' @author Kevin Middleton
 barplot.se <- function(ys, upper, lower, lwd = 1, xlabs){
-  bp <- as.numeric(barplot(ys))
   ytop <- max(upper)
-  barplot(ys, ylim = c(0, ytop), names.arg = xlabs)
+  bp <- as.numeric(barplot(ys, ylim = c(0, ytop), names.arg = xlabs))
   segments(bp, lower, bp, upper, lwd = lwd)
 }
 
